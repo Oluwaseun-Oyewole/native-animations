@@ -1,18 +1,14 @@
-import CustomText from "@/components/custom/text";
+import CardAnimation from "@/components/card";
 import React, { useEffect } from "react";
 import { StyleSheet, View } from "react-native";
-import Animated, {
-  SharedValue,
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import {
   useAnimatedStyle,
   useSharedValue,
   withRepeat,
   withSpring,
 } from "react-native-reanimated";
 
-const handleRotation = (progress: SharedValue<number>) => {
-  "worklet";
-  return `${progress.value * 2 * Math.PI}rad`;
-};
 const NativeAnimation = () => {
   const progress = useSharedValue(0);
   const scale = useSharedValue(2);
@@ -22,7 +18,7 @@ const NativeAnimation = () => {
       borderRadius: progress.value * 50,
       transform: [
         { scale: scale.value },
-        { rotate: handleRotation(progress.value) },
+        { rotate: `${progress.value * 2 * Math.PI}rad` },
       ],
     };
   }, []);
@@ -33,26 +29,22 @@ const NativeAnimation = () => {
   }, []);
 
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <CustomText>NativeAnimation</CustomText>
-      <Animated.View
-        style={[
-          { height: 50, width: 50, backgroundColor: "red" },
-          animatedStyles,
-        ]}
-      ></Animated.View>
+    <View style={styles.container}>
+      <GestureHandlerRootView>
+        <CardAnimation />
+      </GestureHandlerRootView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   styles__text: { fontFamily: "PoppinsMedium" },
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#e3e3e3",
+  },
 });
 
 export default NativeAnimation;
