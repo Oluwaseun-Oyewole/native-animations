@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { Gesture, GestureHandlerRootView } from "react-native-gesture-handler";
+import { Gesture } from "react-native-gesture-handler";
 import Animated, {
   SharedValue,
   interpolate,
@@ -66,7 +66,7 @@ const CardAnimation = () => {
   const progress = useSharedValue(0);
 
   return (
-    <GestureHandlerRootView>
+    <>
       <StatusBar hidden />
       <View
         style={styles.container}
@@ -83,7 +83,7 @@ const CardAnimation = () => {
         })}
         {/* </GestureDetector> */}
       </View>
-    </GestureHandlerRootView>
+    </>
   );
 };
 const styles = StyleSheet.create({

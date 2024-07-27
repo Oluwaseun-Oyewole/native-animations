@@ -1,4 +1,4 @@
-import CardAnimation from "@/components/card";
+import LearnAnimation from "@/components/card/animation";
 import React, { useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -31,7 +31,8 @@ const NativeAnimation = () => {
   return (
     <View style={styles.container}>
       <GestureHandlerRootView>
-        <CardAnimation />
+        {/* <CardAnimation /> */}
+        <LearnAnimation />
       </GestureHandlerRootView>
     </View>
   );
@@ -41,8 +42,8 @@ const styles = StyleSheet.create({
   styles__text: { fontFamily: "PoppinsMedium" },
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    // justifyContent: "center",
     backgroundColor: "#e3e3e3",
   },
 });
