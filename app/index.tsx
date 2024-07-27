@@ -1,4 +1,4 @@
-import LearnAnimation from "@/components/card/animation";
+import ScrollViewAnimation from "@/components/scroll-view";
 import React, { useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -32,7 +32,7 @@ const NativeAnimation = () => {
     <View style={styles.container}>
       <GestureHandlerRootView>
         {/* <CardAnimation /> */}
-        <LearnAnimation />
+        <ScrollViewAnimation />
       </GestureHandlerRootView>
     </View>
   );
