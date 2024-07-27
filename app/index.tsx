@@ -1,4 +1,4 @@
-import ScrollViewAnimation from "@/components/scroll-view";
+import GalleryScrollAnimation from "@/components/scroll-view/gallery-scroll";
 import React, { useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -32,7 +32,7 @@ const NativeAnimation = () => {
     <View style={styles.container}>
       <GestureHandlerRootView>
         {/* <CardAnimation /> */}
-        <ScrollViewAnimation />
+        <GalleryScrollAnimation />
       </GestureHandlerRootView>
     </View>
   );
